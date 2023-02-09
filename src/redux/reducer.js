@@ -7,7 +7,6 @@ export const initialState = {
 			taskName: 'Hello 1',
 		},
 	],
-	task: 'hello',
 
 }
 

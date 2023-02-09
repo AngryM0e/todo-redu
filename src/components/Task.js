@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { TfiMarkerAlt, TfiClose } from 'react-icons/tfi'
 import { useDispatch } from 'react-redux';
 import { deleteTask, editTask } from '../redux/actions';
@@ -9,6 +9,11 @@ export default function Task(props) {
 	const dispatch = useDispatch()
 	const inputRef = useRef();
 	const [inputToogle, toogleValue] = useState(true)
+
+	useEffect(() => {
+		inputRef.current.focus();
+	}, [task]);
+
 
 	const deleteHandler = (e) => {
 		e.preventDefault()
